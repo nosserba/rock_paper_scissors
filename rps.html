@@ -2,11 +2,63 @@
 <html> 
     <head>
         <title>Rock Paper Scissors</title> 
+        <meta charset="UTF-8">
     </head>
     <body>
         <script> 
-        // Your JavaScript goes here!
-        console.log("Hello, World!")
+    
+       
+       let playerSelection = prompt("rock, paper, scissors?: ").toLowerCase; // gives prompt to user to write in option then converts to lowercase
+       let gameChoices = ['rock', 'paper', 'scissors'];  // the array the computer randomly selects from
+       let computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)]; // makes random computer choice from gameChoices array. 
+       computerSelection = computerPlay(); 
+            
+       function computerPlay() {
+                return computerSelection; 
+            }
+
+       function playRound(playerSelection, computerPlay) {
+
+        function computerPlay () {
+           return computerSelection; }
+
+
+                if (playerSelection === 'rock' && computerSelection === 'scissors') {
+                    return alert ("You win! Rock beats scissors"); } // when user picks rock and random scissors 
+
+                if (playerSelection === 'paper' && computerSelection === 'scissors') {
+                    return alert ("You lose! Scissors beat paper"); // when user picks paper and random scissors
+                }
+                
+                if (playerSelection === 'rock' && computerSelection === 'paper') {
+                    return alert ("You lose! Paper beats rock"); // when user picks rock and random paper
+                }
+
+                if (playerSelection === 'rock' && computerSelection === 'rock') {
+                    return alert ("You tied! Both picked rock"); // when user picks rock and random rock
+                }
+
+                if (playerSelection === 'paper' && computerSelection === 'rock') {
+                    return alert ("You win! Paper beats rock"); // when user picks paper and random rock 
+                }
+
+                if (playerSelection === 'paper' && computerSelection === 'paper') {
+                    return alert ("You tie! Both picked paper"); // when user picks paper and random paper
+                }
+                if (playerSelection === 'scissors' && computerSelection === 'paper') {
+                    return alert ("You win! Scissors beats paper"); // when user picks scissors and random paper
+                }
+                if (playerSelection === 'scissors' && computerSelection === 'rock') {
+                    return alert ("You lose! Rock beats scissors"); // user picks scissors and random rock 
+                }
+                if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+                    return alert ("You tie! Both picked scissors"); // user picks scissors and random scissors
+                }
+
+            }
+            console.log(playRound(playerSelection(), computerSelection()));
+
+
         </script> 
     </body>
 </html>
