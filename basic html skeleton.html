@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <title>Rock Paper Scissors</title> 
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<div class = "choices">
+
+    <div data-choice="rock" class="choice"> 
+        <kbd>A</kbd> 
+        <span class = "img">rock</span>
+    </div>
+
+    <div data-choice="paper" class="choice"> 
+        <kbd>S</kbd>
+        <span class = "img">paper</span>
+        </div>
+
+</div>
+
+<img data-choice="rock" img src="rock.jpg"></img> 
+<img data-choice="paper" img src="paper.jpg"></img> 
+        
+    <script> 
+        window.addEventListener('keydown', function(e) {
+        const img = document.querySelector('img[data-choice="${e.keyCode}"]');
+        console.log(img); 
+        const choice = document.querySelector('.choice[data-key="${e.keyCode}"]');
+        if(!img) return; // stop the function from running all together
+        img.currentTime = 0; // rewind to the start if spamming 
+        img.play(); 
+        key.classList.add('playing'); 
+    });
+
+function removeTransition(e) {
+    if(e.propertyname !== 'transform') return; // skip if its not a transform
+    this.classList.remove('playing'); // resets the 'playing' script from before 
+}
+
+const choices = document.querySelectorAll('.choice'); 
+choices.forEach(choice => choice.addEventListener('transitioned', removeTransition));
+window.addEventListener('keydown', playImg); 
+
+
+        </script> 
+    </body>
+</html>
+
+
